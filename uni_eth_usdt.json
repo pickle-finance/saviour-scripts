@@ -3,10 +3,6 @@
         "rawValue": "3031012566706",
         "value": "0.000003031012566706"
     },
-    "0xCa845A71d1ff53E7DB7769Ae3f356AF53Fb43000": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
     "0x940dBD89E5E2fA0f0A4EBFddea8E5aAa37D6C96A": {
         "rawValue": "31244835122089",
         "value": "0.000031244835122089"
@@ -19,17 +15,9 @@
         "rawValue": "33217174515224",
         "value": "0.000033217174515224"
     },
-    "0xc739D8AAFc091735C9996dCB940023EB23528FeD": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
     "0xF1394140fe0982E40fa9A9846E7c5b0842CECe56": {
         "rawValue": "417806976326662",
         "value": "0.000417806976326662"
-    },
-    "0xf0f17f544F30151f3992c443840814ea3F88ae63": {
-        "rawValue": "0",
-        "value": "0.0"
     },
     "0x3c879c214C2364E21a91BB6Bc300D419013E8Bf0": {
         "rawValue": "50627927339796",
@@ -51,10 +39,6 @@
         "rawValue": "809774009281242",
         "value": "0.000809774009281242"
     },
-    "0x2C719B3eC90Fb42bE34e5EfA09A58A0c6073B80f": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
     "0x3888F5A94560D6af334c82DC5D94C134870f9E78": {
         "rawValue": "700193908756664",
         "value": "0.000700193908756664"
@@ -63,29 +47,9 @@
         "rawValue": "62466262969544",
         "value": "0.000062466262969544"
     },
-    "0x4F643fb421F588F5cE3c4aB591e22b04847FdBf3": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
-    "0xEe6cE216ceE9744BDc64cFB1c901d923d703b539": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
     "0x2e4ae4d3bD0Af45040b4F17e0BB7E6dC548626B1": {
         "rawValue": "1200646239911801",
         "value": "0.001200646239911801"
-    },
-    "0xF8AE3A91161c63CF236F3aa755C5e8CBCf36fA21": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
-    "0x96Cfc952e0a0630807dB61dFA16622380289DAbf": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
-    "0xD7981de7eD834A38eAEfd417B6daD32c10D66572": {
-        "rawValue": "0",
-        "value": "0.0"
     },
     "0xEB4576fE753DAB07635c0Bb6c8f0A355e1Db5d31": {
         "rawValue": "208084588484399",
@@ -99,34 +63,6 @@
         "rawValue": "206795094805252",
         "value": "0.000206795094805252"
     },
-    "0x6b15c6A7B7Fe3924C91D525265F5095f7E533AA8": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
-    "0x3d0E94a559474B5F550afFbD0eD24cba7d91eF66": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
-    "0x0e08afEC607dFb9fDaD6921af6471B5cF8F7c713": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
-    "0x17BfbB16B3E67065D0c72E62391eBAfb85e87094": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
-    "0xBf915D2123c94Fc56273628dE17590a69F9b655C": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
-    "0x0bE4b1633bC2E673289e1f708d16bf3218f4a118": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
-    "0x8dA0a15786008f543A760701E2021f992e1C1CC5": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
     "0x5b13bB1e315744BdEa0749cde6254f0499E25a2B": {
         "rawValue": "274425637851374",
         "value": "0.000274425637851374"
@@ -135,53 +71,17 @@
         "rawValue": "3969536602149623",
         "value": "0.003969536602149623"
     },
-    "0x1194628C30e6384d21a12582a186bC9d46484A7A": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
-    "0x77d046a0CA24B564EA97516124004dBE2962AD8e": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
     "0xF9A5EaE7E0b1D51cc8411BB612bA3B9D2cb4500A": {
         "rawValue": "82884888628616",
         "value": "0.000082884888628616"
-    },
-    "0x10889dF188DC78e2d1761C741f971363d815d07C": {
-        "rawValue": "0",
-        "value": "0.0"
     },
     "0x9222f3fAD317Af2Fa4Feb4176BF3cfCE798080a6": {
         "rawValue": "44006912743740",
         "value": "0.00004400691274374"
     },
-    "0x9e4BA24bE9Bf30665624547033Aff2de0fb1aAD4": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
-    "0xE7304bA0f157f2Ade94015934284b6704BC72911": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
-    "0x633E9873cc92108c6a025BC2A86e96649a590a35": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
-    "0x2759321Df4C0f0475c41BBf9d17891bd42E32C3c": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
     "0xf4828566c5976D4987F645CFB936dDd5EE5af29e": {
         "rawValue": "38884099372641",
         "value": "0.000038884099372641"
-    },
-    "0xad6EE7C40d7D80a6c404E82e77Cde5c5088E98a5": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
-    "0x3584cA77ba08BD8b3fE4762E60EB284E37696829": {
-        "rawValue": "0",
-        "value": "0.0"
     },
     "0x48b742b9D935FDaeADE1A48CD7c5E4aeC4360b0c": {
         "rawValue": "241021063791993",
@@ -190,10 +90,6 @@
     "0x835e7e74dDc84befa0A4663d3D6AB1493A2C71b8": {
         "rawValue": "64156885303290",
         "value": "0.00006415688530329"
-    },
-    "0x48f0c9a48504CF02A4386496Af8D859e384A7Eab": {
-        "rawValue": "0",
-        "value": "0.0"
     },
     "0x7Fc2F133807e2cc899c655122616B02493848B0d": {
         "rawValue": "29536993443204",
@@ -207,33 +103,13 @@
         "rawValue": "63707139960678",
         "value": "0.000063707139960678"
     },
-    "0xC698D04f0d0E0a8fe0D5Fc9A74cC0C0CD0f37a1D": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
     "0xdcfd6D6e63F15A391D96D1b76575Ae39Ad6965D9": {
         "rawValue": "159607923894885",
         "value": "0.000159607923894885"
     },
-    "0x345f9fa4A542aadF963FA89A3B92535a88456234": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
-    "0xc292297d914f15EF7ffCa014274EDb4E2eE4976A": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
-    "0x614D98a57A5D879D717152dE0690ed2b04562adE": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
     "0xE3E39161d35E9A81edEc667a5387bfAE85752854": {
         "rawValue": "101952730679861",
         "value": "0.000101952730679861"
-    },
-    "0x1D096f771713570F529A2db5aac1F296a3613a7e": {
-        "rawValue": "0",
-        "value": "0.0"
     },
     "0x37b66Ad48c6bf20596aC215354FD5E047011d0a3": {
         "rawValue": "605421337915201",
@@ -243,41 +119,13 @@
         "rawValue": "3259185427199036",
         "value": "0.003259185427199036"
     },
-    "0xA57183bDF02D8f8b2a645E638eC229a81675e8fD": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
-    "0x8691119BCeaE68B6649ce1cb1D7D17e3D3aEe4f5": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
     "0x904aF0Ef6115c26CBAdeab44e7b439EB5e8A22CE": {
         "rawValue": "12049779286863055",
         "value": "0.012049779286863055"
     },
-    "0x80629DE4EA833C62597964FD1b09E9d097F9C2B2": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
-    "0x96251492c410E235fE3571B473f97F17Ae1594c5": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
     "0xeBc462355194903ad1AD32fa767B3B74D5acA278": {
         "rawValue": "744743030089551",
         "value": "0.000744743030089551"
-    },
-    "0x30cA2d6cf43BB6397f6e161aB21a363D14F19329": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
-    "0x628427629c3Ba817eCE0085DB11aF83c131D1F05": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
-    "0x3f126A774697b230f5b2305B3764D961485B779C": {
-        "rawValue": "0",
-        "value": "0.0"
     },
     "0x62f35D3231e6d3C6DDd14851Cc897b30B0c9F2Df": {
         "rawValue": "1603751236348585",
@@ -295,17 +143,9 @@
         "rawValue": "11917893753552",
         "value": "0.000011917893753552"
     },
-    "0x6E5B7fC08654D4C145b87BBE666e2bAa14Ba225d": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
     "0x8bfad1E073b7DAE77DEC8768eA7dB33b1411455D": {
         "rawValue": "213457602470463",
         "value": "0.000213457602470463"
-    },
-    "0xd5992557ee5fB18c5d4b4c1425E6e3b5b2633f31": {
-        "rawValue": "0",
-        "value": "0.0"
     },
     "0xdDA936D9B15473489503D4B5668E7AF8ba8993B8": {
         "rawValue": "34531093414496",
@@ -319,14 +159,6 @@
         "rawValue": "2709102141883468",
         "value": "0.002709102141883468"
     },
-    "0x00610d1b203f9Ddf2776D8729B0de854F5dcE8Ed": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
-    "0xF8C74805d77648576B387F06063aDe9651108Fca": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
     "0xBCBE473DD45a36a97Ee612Ccf5b8b8bEA77153DA": {
         "rawValue": "79497899095722",
         "value": "0.000079497899095722"
@@ -334,18 +166,6 @@
     "0xA51A6F181D7BdE6F4fc445Ff844fa9329616C01a": {
         "rawValue": "35657439543318",
         "value": "0.000035657439543318"
-    },
-    "0x6af5a382b2241Efff4B58764CA7109168f7a272e": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
-    "0x37FAbbfaf80501c68ee77625D620d6501B35417E": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
-    "0x82645bc15fEE680963bFE321500d74A053c682ea": {
-        "rawValue": "0",
-        "value": "0.0"
     },
     "0x0d30ca8Dc55d1b5EF9Cba4fA504dA8341e252CeC": {
         "rawValue": "607434987787402",
@@ -355,25 +175,9 @@
         "rawValue": "256447249764158",
         "value": "0.000256447249764158"
     },
-    "0xe9f4EA22519821584F74a66e44620f6896c049ff": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
     "0xfb0Cc36F27a28cc19C86C156091E2BEe7B2F6b69": {
         "rawValue": "155941724914589",
         "value": "0.000155941724914589"
-    },
-    "0xFd584000C9534B84b1c2d2478F927DD50785A9B7": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
-    "0xE7EB077D77f09b469B2ea8548AA860b137039977": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
-    "0xdd1dF77B43653cc56e0CbF5309Edd83aFb7b681F": {
-        "rawValue": "0",
-        "value": "0.0"
     },
     "0x84aBD78727950Aa776f7939102f51Df6B166ab84": {
         "rawValue": "20938391414346",
@@ -395,10 +199,6 @@
         "rawValue": "1578333184983049",
         "value": "0.001578333184983049"
     },
-    "0xa053C0c9f32cCBb0b871B22D1c1050E89E87Ab7b": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
     "0x8D4F54913BA39263395B0067F953355813223699": {
         "rawValue": "49345031145053",
         "value": "0.000049345031145053"
@@ -407,29 +207,9 @@
         "rawValue": "3024222662132229",
         "value": "0.003024222662132229"
     },
-    "0xb39dB84c4775d7b56Cf7042a827e9cc4CD715467": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
-    "0x49a2DcC237a65Cc1F412ed47E0594602f6141936": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
-    "0x1d12c3A1513cc347f75A7edB7759262E7D6B304A": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
     "0xd4f8a1BbEe54C1533CF0ef8C6f877ADa4dADcA1B": {
         "rawValue": "711818184335184",
         "value": "0.000711818184335184"
-    },
-    "0xA0eFBA9639A987f73ECe8B868eF4c4F8E211A790": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
-    "0xC83645968AafCadcD1b6b399124EF4D18CB43f3A": {
-        "rawValue": "0",
-        "value": "0.0"
     },
     "0x1655FbfcFEdC9d455088ff1226B6Cbe439D71DF8": {
         "rawValue": "394398411412017",
@@ -439,14 +219,6 @@
         "rawValue": "1198085920307621",
         "value": "0.001198085920307621"
     },
-    "0x287e2c76Aab4720786076c3DEedD7Dd386092050": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
-    "0x6411052D69431B23646155426dB1D064Ad91cbd4": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
     "0xD93e067Bcb3734F9D815F0E75E6c60B9F5539955": {
         "rawValue": "762967679602104",
         "value": "0.000762967679602104"
@@ -455,37 +227,9 @@
         "rawValue": "32363166793778",
         "value": "0.000032363166793778"
     },
-    "0x93974819968d78e9e115500E2af21bed23845dC9": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
     "0x420E7b56927EDfd45B126a0373C4b66ce96F68C6": {
         "rawValue": "215338335648744",
         "value": "0.000215338335648744"
-    },
-    "0x369f5238C82b4441E28318F96Fd16010B8269560": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
-    "0xe16835086bB8059b8bb25F3D56C415491E86CBa2": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
-    "0xcE429156FD7a69EE9C5eBDbAad7428C42823AfEc": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
-    "0x88b7a44CECD526cd2D424B0A4Cc2bbB26341Dd8f": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
-    "0x63c28A5cAec10F876c046dACa84301Ab37e564b7": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
-    "0x5aD24F12c0CD93CE5dcc5530AECBe376f2e6Aa07": {
-        "rawValue": "0",
-        "value": "0.0"
     },
     "0x0B09BdeBDbd4DA9b99df5c906bEAd676b3D8F507": {
         "rawValue": "5442335359129823",
@@ -511,14 +255,6 @@
         "rawValue": "188730088493364",
         "value": "0.000188730088493364"
     },
-    "0xCa3E1D7862A99F541C3249A4243b8D189A6cd3CA": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
-    "0x2F07cE39C53Decae179ba5E797CE98f78e7332FC": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
     "0x63950CfD75e2290a3581B6b0E39C86bC11697D5B": {
         "rawValue": "4843873029316952",
         "value": "0.004843873029316952"
@@ -531,21 +267,9 @@
         "rawValue": "15417190407343295",
         "value": "0.015417190407343295"
     },
-    "0x70c0c69E5B6CCCd39940a9Ac3A0209e37C2E5D3A": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
-    "0xD7b2879C8922cd704E41E8CC1f18f6994D6B7C36": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
     "0xeaE98E98CeA0577Cf78e2Efce00B3Faa9444130C": {
         "rawValue": "616992633847359",
         "value": "0.000616992633847359"
-    },
-    "0xB857270071C5Ac2384523a689E2Ec51D90974feD": {
-        "rawValue": "0",
-        "value": "0.0"
     },
     "0x1F47101647239C00aF2CE908521451b6a87987aA": {
         "rawValue": "248681416077387",
@@ -554,34 +278,6 @@
     "0xC180cCF8D26f368563c0DD5726198822F23D6403": {
         "rawValue": "209145832874143",
         "value": "0.000209145832874143"
-    },
-    "0x2adcC4bc8A0785fB1A937AD177a2F23652a5f12a": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
-    "0x9625807057dEE9D863E27F1Cf1Ca1b01AeF9ADDa": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
-    "0x158deb9F418f6800c57808eBcB5506517361eEFc": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
-    "0x84004eb4a822cD38dd957F40944bD5C91660f020": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
-    "0x3d304325998e5B3deaaF76e78a838ca7e7B1f5aA": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
-    "0x91544E0d0ee6361152f06891b52E778B3614d253": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
-    "0xD2c4fB6CEc4595b766b8a00542E87448964DE9e6": {
-        "rawValue": "0",
-        "value": "0.0"
     },
     "0x77fB0deBA36c1ae0057B8A07174Ed3C87F53F11E": {
         "rawValue": "674969288604915",
@@ -607,10 +303,6 @@
         "rawValue": "22164320152153",
         "value": "0.000022164320152153"
     },
-    "0x2ed7aFA17473e17Ac59908F088b4371D28585476": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
     "0x334FF7580eE92bb13D744cd309925560877122a1": {
         "rawValue": "243033138776772",
         "value": "0.000243033138776772"
@@ -623,29 +315,9 @@
         "rawValue": "62122363322690",
         "value": "0.00006212236332269"
     },
-    "0x631f82fB2A62496d28780A821f47786b05e2278A": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
     "0xAE653682Dee958914A82C9628de794dCbbEe3D04": {
         "rawValue": "14304929069862845",
         "value": "0.014304929069862845"
-    },
-    "0x64A7Cc1A3235fCFfe0Cc00F576fA61BeA5DDC43c": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
-    "0x598e8Cf1e964FfA7dC58B94426F006d546d15AF7": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
-    "0x37247F2d5718c5717044dfA8eaE30ae1e97A523D": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
-    "0x5fCF316bb2A86F9444633BF5aDb1531FBdCAB669": {
-        "rawValue": "0",
-        "value": "0.0"
     },
     "0xDB19D3186Ea32001F6F16867D5D31a39BbA139Be": {
         "rawValue": "321605976403987",
@@ -654,14 +326,6 @@
     "0x28a416E90A763B2261DC80E02a21cb7f9770B053": {
         "rawValue": "48307683932817",
         "value": "0.000048307683932817"
-    },
-    "0xd061409f37f31D85993b373978665c1b19E32bC1": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
-    "0xEb9Ab120a5bB412728806580993Fcc85cAF75281": {
-        "rawValue": "0",
-        "value": "0.0"
     },
     "0xF96Af53BfFc1fF30d26fF3F64bA6321541F647F0": {
         "rawValue": "3394323147911",
@@ -679,10 +343,6 @@
         "rawValue": "127104687625187",
         "value": "0.000127104687625187"
     },
-    "0xF93adBAE37Baf7756ea96C7C138b0629A1ABF59C": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
     "0xE63b7FF4639b990bAD1d7257Fff8070F859f0997": {
         "rawValue": "31730552246288",
         "value": "0.000031730552246288"
@@ -698,10 +358,6 @@
     "0x848887741B3e38233Cd858c5dD7B48Ca9197FC08": {
         "rawValue": "20921778101860",
         "value": "0.00002092177810186"
-    },
-    "0x2e4A943ebe8aE780ba7Cd9Ce0dCE5b194aDb2f76": {
-        "rawValue": "0",
-        "value": "0.0"
     },
     "0x4f862899C42645bEc4b73aB20E4d06688F592f6f": {
         "rawValue": "815487776517390",
@@ -723,10 +379,6 @@
         "rawValue": "1062229168457287",
         "value": "0.001062229168457287"
     },
-    "0x7c8bC95EBE9C66853A539fDb896f12f555A8CA20": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
     "0x8D622746dA805a5c75d32B3413C28062636e3dE9": {
         "rawValue": "940860783310663",
         "value": "0.000940860783310663"
@@ -739,33 +391,9 @@
         "rawValue": "4383010747634191",
         "value": "0.004383010747634191"
     },
-    "0x155ddAc174DC33A1c7054B90aE8c31228776D147": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
-    "0xaf7d21d40e688eb4eB791943E46D35a14EdCa471": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
-    "0x5f350bF5feE8e254D6077f8661E9C7B83a30364e": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
-    "0x86E9BFA8110B4211c0c17d62AEBE2e144bc236D0": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
-    "0xae2C4abfFbae5AFdE60467D26d50E98930E1E2DD": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
     "0x05547D4e1A2191B91510Ea7fA8555a2788C70030": {
         "rawValue": "6974601798025967",
         "value": "0.006974601798025967"
-    },
-    "0xC7CeeBb5648bB7F19A3c429BaFD6DD6bb9459ccb": {
-        "rawValue": "0",
-        "value": "0.0"
     },
     "0x8DE0EA136082c0dDD973c6E5BF45e31f6D158973": {
         "rawValue": "2604166587169824",
@@ -774,10 +402,6 @@
     "0x41C334F1a2e9Af08638947508970D7DE6189B927": {
         "rawValue": "2359893716886644",
         "value": "0.002359893716886644"
-    },
-    "0x44D816F29930b5947e69F73D688E06445F936410": {
-        "rawValue": "0",
-        "value": "0.0"
     },
     "0x93C027865354e96a1e9ec69fc8253e6d49013f82": {
         "rawValue": "1873695157257266",
@@ -791,14 +415,6 @@
         "rawValue": "207399611022335",
         "value": "0.000207399611022335"
     },
-    "0xEFFd544a3B1774b4fF01717252aE3D151F53227b": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
-    "0x0e9fdB1F4d629ae5AC07D22516b1d2E23269E97f": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
     "0xB039dF879F41487396C6ef973272ED4db4c88c90": {
         "rawValue": "438539119288660",
         "value": "0.00043853911928866"
@@ -807,10 +423,6 @@
         "rawValue": "649814398244830",
         "value": "0.00064981439824483"
     },
-    "0x59BB7bC404eCC382A5F635C3F10331D0df72C264": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
     "0xa07f2A3A8a6e7F9e14CC0EB5633E6795814d549f": {
         "rawValue": "15649122817001",
         "value": "0.000015649122817001"
@@ -818,10 +430,6 @@
     "0x1c012b03f1c2DEa274D2eeEb566B0Eeabfe3Af1A": {
         "rawValue": "598524843659747",
         "value": "0.000598524843659747"
-    },
-    "0x79A666aB05291B497828530593440E783F8967a6": {
-        "rawValue": "0",
-        "value": "0.0"
     },
     "0x3a607Cf105e830c023003056514b86E9De0A691e": {
         "rawValue": "171868290542628",
@@ -835,25 +443,9 @@
         "rawValue": "286924503558618",
         "value": "0.000286924503558618"
     },
-    "0x2eACd09e92273D5fb86Cf40504917F664EE15Da8": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
-    "0xE2a9C552a15698f9a1E2D81e73f7672568101B47": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
     "0x51f9946A9e4a8c8F64F335942609ed2bd9C027ad": {
         "rawValue": "7144696155386",
         "value": "0.000007144696155386"
-    },
-    "0x3CFab65f43847a02284368AFEE003bACa266D4fB": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
-    "0xC2b691F62F69738c3315B2A96B03df233a42986b": {
-        "rawValue": "0",
-        "value": "0.0"
     },
     "0xd3A349dC7CBfafBEe996528Ad3C3839940786486": {
         "rawValue": "2073901065568",
@@ -867,10 +459,6 @@
         "rawValue": "2994742440140199",
         "value": "0.002994742440140199"
     },
-    "0x245eC9ee169a1ed92e7DCf3CD014761868c37f82": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
     "0x132B7b7cc37b399a813e26DB4e8D219c377f0EC7": {
         "rawValue": "1856936733447491",
         "value": "0.001856936733447491"
@@ -878,14 +466,6 @@
     "0xdf8d12A07540768032aa307D50aF6CB5F4e8c153": {
         "rawValue": "5550162801725746",
         "value": "0.005550162801725746"
-    },
-    "0x792d8cDE8624Fd02185328B426a0b9E9b8A1A25F": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
-    "0x4e1083f454cAE424c8C1165D4f8e0Ef5e462cBa7": {
-        "rawValue": "0",
-        "value": "0.0"
     },
     "0xd74A1d8375eEdC1e79Aa8B811d197746C1B559C6": {
         "rawValue": "5906539331213",
@@ -898,10 +478,6 @@
     "0x36bBD1EF1Fd15637d63dE4ccB4EfA49EA1F053e8": {
         "rawValue": "340332718914844",
         "value": "0.000340332718914844"
-    },
-    "0x84f8129d8C535c01f4D29A6e44a3dfB4D1457bb2": {
-        "rawValue": "0",
-        "value": "0.0"
     },
     "0x108156f882a065148e1De97F877195d6C4942B94": {
         "rawValue": "103824875262002",
@@ -922,10 +498,6 @@
     "0x0D4F36CAE5998C47428849A5727E2A041B7a411C": {
         "rawValue": "51958167243340918",
         "value": "0.051958167243340918"
-    },
-    "0xB0Fc8558e80886c1Aab6C389a72d3DF8d13DeFba": {
-        "rawValue": "0",
-        "value": "0.0"
     },
     "0x044a9c43e95AA9FD28EEa25131A62b602D304F1f": {
         "rawValue": "497135758298119",
@@ -950,10 +522,6 @@
     "0x8B851F5C530e99ed988887CD58eF0338f8E09B7A": {
         "rawValue": "22616852856828",
         "value": "0.000022616852856828"
-    },
-    "0xF531bDf8c105aCFEdB90F6cfb69d2684ef7393e0": {
-        "rawValue": "0",
-        "value": "0.0"
     },
     "0x47FEA52a4b79954fEdE50EE07b3F5d22696c8586": {
         "rawValue": "99934549569912",
@@ -999,21 +567,9 @@
         "rawValue": "1044997648591776",
         "value": "0.001044997648591776"
     },
-    "0x0D3F2D41E01D9B1d1963478EafB9a46415A773b1": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
     "0x44f51503b633060BBD54963710dA9888A8BA5b49": {
         "rawValue": "54555924508578847",
         "value": "0.054555924508578847"
-    },
-    "0xAfD5f60aA8eb4F488eAA0eF98c1C5B0645D9A0A0": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
-    "0xc4C69760cAd701b9280217fAD51CB81BF7D5Cd01": {
-        "rawValue": "0",
-        "value": "0.0"
     },
     "0xD781f6729d033542c5377cE9ec68eD4b44f07378": {
         "rawValue": "245889954631654",
@@ -1043,10 +599,6 @@
         "rawValue": "2674063728182211",
         "value": "0.002674063728182211"
     },
-    "0x5940025984A31B4c77ca264445CC28f861f2643D": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
     "0xA94ca3837fa92D3223f0b651C5672299F286158d": {
         "rawValue": "12919675663368636",
         "value": "0.012919675663368636"
@@ -1059,37 +611,13 @@
         "rawValue": "3258190910273",
         "value": "0.000003258190910273"
     },
-    "0x2Cf72cA1bABd687578f0e4BFff0b9Ca496AA4516": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
     "0x3735773a5Aa173c2d576A27185B233CA4c5510b5": {
         "rawValue": "1286628236366573",
         "value": "0.001286628236366573"
     },
-    "0x27a5CbBBc8d1fB0f3B218b2AcBC1205D86710D7c": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
-    "0xe6f3fd8ABB61ca6417D386e67e9596c3492D49A4": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
-    "0x790f3efDf9dC3C862E08C606f9bb9dF952A926Dc": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
     "0x0C5a2C72C009252f0E7312f5a1Ab87de02be6FBE": {
         "rawValue": "216416511257781",
         "value": "0.000216416511257781"
-    },
-    "0x99eb33756a2eAa32f5964A747722c4b59e6aF351": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
-    "0x5c95291684182ec3CE83f15996e66440864c281e": {
-        "rawValue": "0",
-        "value": "0.0"
     },
     "0x005Ff202C271d2419fb03ec873DEdFe163A5ce36": {
         "rawValue": "211240414990327",
@@ -1111,10 +639,6 @@
         "rawValue": "3296666278987",
         "value": "0.000003296666278987"
     },
-    "0x457773c40d0d6a783bEA3Bfe85d4e05b90bFa0Ea": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
     "0x25d87832BE2B87c6a99e8764e50f387e49028e92": {
         "rawValue": "21799144757439",
         "value": "0.000021799144757439"
@@ -1127,10 +651,6 @@
         "rawValue": "82807506975480",
         "value": "0.00008280750697548"
     },
-    "0xc6E4Ad3ccdfC65687D2d60a454a8bdDc1F4d6c06": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
     "0x007bbEc99CD6239923F4667998b8A47204EB0cD2": {
         "rawValue": "2031439415626861",
         "value": "0.002031439415626861"
@@ -1138,10 +658,6 @@
     "0x44E2F285F26bF65b5396873dD25B8D82A63e5546": {
         "rawValue": "906043389573153",
         "value": "0.000906043389573153"
-    },
-    "0xfB560859798928aBc515B900308F2D20a0b9BfF9": {
-        "rawValue": "0",
-        "value": "0.0"
     },
     "0x4347e44D5ddf158d692Ff86eA7df813AD799a990": {
         "rawValue": "249121098575197",
@@ -1154,14 +670,6 @@
     "0xFBb05840f992396e1Aaaa34A6d25CCcE86a27559": {
         "rawValue": "15183419009183",
         "value": "0.000015183419009183"
-    },
-    "0x97897428C3bd23D1CadEFFaF3Bb11C61E2d0eb43": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
-    "0x1B4ca67212C317b8730289d5305E7d67C0Ed2F1f": {
-        "rawValue": "0",
-        "value": "0.0"
     },
     "0x63174da8d75218d869804469cdFb507fd612E4ff": {
         "rawValue": "942779251297296",
@@ -1182,14 +690,6 @@
     "0x1E3882aFF34C1eaF5507e77026F215085bda1e19": {
         "rawValue": "298012238138859",
         "value": "0.000298012238138859"
-    },
-    "0xd9828d0eA96c106f547578deC2Be9f3CeECDaB0d": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
-    "0x5f578A06068F13Dd1a72917890D36B97988b03B4": {
-        "rawValue": "0",
-        "value": "0.0"
     },
     "0x9FaCE78A611e257c707665A28CeEe658e93e2a59": {
         "rawValue": "647032432851903",
@@ -1219,10 +719,6 @@
         "rawValue": "15223576661210",
         "value": "0.00001522357666121"
     },
-    "0x2Fc61cA1Cf50983b7533653D95aCE66e71759398": {
-        "rawValue": "0",
-        "value": "0.0"
-    },
     "0xC8C8Ea2588D9E26A69c2fa56C09C7e274b72D8A0": {
         "rawValue": "92813664865893",
         "value": "0.000092813664865893"
@@ -1246,10 +742,6 @@
     "0xf1246624EBDACAE1e3A576949e39321D0201ecB9": {
         "rawValue": "2231029061907",
         "value": "0.000002231029061907"
-    },
-    "0x1c8ab562ADeF1ECe6F03D721723A83bb560a32dE": {
-        "rawValue": "0",
-        "value": "0.0"
     },
     "0xf2e66768A8469A48E2eF282b006cD886147b4CB0": {
         "rawValue": "158980796192189",
@@ -1278,5 +770,21 @@
     "0x7a2611B4b14D14c6d57C39daC5B02cb15Ef5Eef6": {
         "rawValue": "4709166288738",
         "value": "0.000004709166288738"
+    },
+    "0x400cBCF4B2A30AAC711Fc5A882FcAF485ccE6F04": {
+        "rawValue": "15185910080574",
+        "value": "0.000015185910080574"
+    },
+    "0x4b8515d6Aa44eAA0d0587D395CF52f26dD25F91E": {
+        "rawValue": "428665977970",
+        "value": "0.00000042866597797"
+    },
+    "0x058B10CbE1872ad139b00326686EE8CCef274C58": {
+        "rawValue": "1",
+        "value": "0.000000000000000001"
+    },
+    "0xbdAD8d6ea11b590DC0a5ae002227CDBDF1c4DDD6": {
+        "rawValue": "850983243",
+        "value": "0.000000000850983243"
     }
 }

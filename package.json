@@ -2,7 +2,7 @@
   "name": "saviour-scripts",
   "version": "1.0.0",
   "main": "index.js",
-  "author": "bigbrainbriner@protonmail.com <bigbrainbriner@protonmail.com>",
+  "author": "me@pickle-finance@gmail.com",
   "license": "MIT",
   "scripts": {
     "start": "node script.js"
