@@ -1,0 +1,18 @@
+{
+  "name": "saviour-scripts",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "bigbrainbriner@protonmail.com <bigbrainbriner@protonmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node script.js"
+  },
+  "dependencies": {
+    "@studydefi/money-legos": "^2.4.1",
+    "abi-decoder": "^2.3.0",
+    "ethers": "^5.0.14"
+  },
+  "devDependencies": {
+    "eslint": "^7.10.0"
+  }
+}

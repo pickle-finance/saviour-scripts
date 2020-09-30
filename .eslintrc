@@ -1,0 +1,4 @@
+{
+  "extends": "eslint:recommended",
+  "ecmaVersion": 2015
+}
