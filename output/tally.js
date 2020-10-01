@@ -1,3 +1,4 @@
+const { ethers } = require("ethers");
 const fs = require("fs");
 
 const main = async () => {
@@ -15,7 +16,11 @@ const main = async () => {
       .map((x) => parseFloat(data[x].value))
       .reduce((acc, x) => acc + x, 0);
 
-    console.log("total", f, total);
+    const totalBN = Object.keys(data)
+      .map((x) => ethers.BigNumber.from(data[x].rawValue))
+      .reduce((acc, x) => acc.add(x), ethers.constants.Zero);
+
+    console.log(f, total, totalBN.toString());
   }
 };
 

@@ -42,6 +42,8 @@ contract Reimbursement {
   mapping (address => uint256) public amounts;
   mapping (address => bool) public reimbursed;
 
+  address public constant token = 0x0d4a11d5EEaaC28EC3F61d100daF4d40471f1852;
+
   constructor() public {
     amounts[0x907D9B32654B8D43e8737E0291Ad9bfcce01DAD6] = 3031012566706;
     amounts[0x940dBD89E5E2fA0f0A4EBFddea8E5aAa37D6C96A] = 31244835122089;
@@ -243,10 +245,10 @@ contract Reimbursement {
 
   }
   
-  function claim(address _token) public {
+  function claim() public {
     require(!reimbursed[msg.sender], "already reimbursed");
     require(amounts[msg.sender] > 0, "not claimable");
-    require(ERC20(_token).transfer(msg.sender, amounts[msg.sender]));
+    require(ERC20(token).transfer(msg.sender, amounts[msg.sender]));
     reimbursed[msg.sender] = true;
   }
   
