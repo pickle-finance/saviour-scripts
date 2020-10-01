@@ -8,14 +8,23 @@ const addressMapping = {
   "uni_eth_usdt.json": "0x0d4a11d5EEaaC28EC3F61d100daF4d40471f1852",
 };
 
+const nameMapping = {
+  "scrv.json": "SCRV",
+  "uni_eth_dai.json": "UniEthDai",
+  "uni_eth_usdc.json": "UniEthUsdc",
+  "uni_eth_usdt.json": "UniEthUsdt",
+};
+
 const main = async () => {
   const file = process.argv[2];
   const data = JSON.parse(fs.readFileSync(file, "utf-8"));
   const recipients = Object.keys(data);
 
-  const tokenAddress = addressMapping[file.split('/').slice(-1)[0]]
+  const filename = file.split('/').slice(-1)[0]
+  const tokenAddress = addressMapping[filename]
+  const tokenName = nameMapping[filename]
 
-  if (!tokenAddress) {
+  if (!tokenAddress || !tokenName) {
     console.log('NOONONONONONONONONONO')
     process.exit(1)
   }
@@ -60,7 +69,7 @@ interface ERC20 {
     function transfer(address _to, uint256 _value) external returns (bool success);
 }
 
-contract Reimbursement {
+contract ${tokenName}Reimbursement {
   mapping (address => uint256) public amounts;
   mapping (address => bool) public reimbursed;
 

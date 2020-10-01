@@ -38,7 +38,7 @@ interface ERC20 {
     function transfer(address _to, uint256 _value) external returns (bool success);
 }
 
-contract Reimbursement {
+contract UniEthDaiReimbursement {
   mapping (address => uint256) public amounts;
   mapping (address => bool) public reimbursed;
 
