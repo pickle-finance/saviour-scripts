@@ -2,38 +2,6 @@
 // from file output/uni_eth_usdt.json
 pragma solidity ^0.6.7;
 
-library ERC20SafeTransfer {
-    function safeTransfer(address _tokenAddress, address _to, uint256 _value) internal returns (bool success) {
-        // note: both of these could be replaced with manual mstore's to reduce cost if desired
-        bytes memory msg = abi.encodeWithSignature("transfer(address,uint256)", _to, _value);
-        uint msgSize = msg.length;
-
-        assembly {
-            // pre-set scratch space to all bits set
-            mstore(0x00, 0xff)
-
-            // note: this requires tangerine whistle compatible EVM
-            if iszero(call(gas(), _tokenAddress, 0, add(msg, 0x20), msgSize, 0x00, 0x20)) { revert(0, 0) }
-            
-            switch mload(0x00)
-            case 0xff {
-                // token is not fully ERC20 compatible, didn't return anything, assume it was successful
-                success := 1
-            }
-            case 0x01 {
-                success := 1
-            }
-            case 0x00 {
-                success := 0
-            }
-            default {
-                // unexpected value, what could this be?
-                revert(0, 0)
-            }
-        }
-    }
-}
-
 interface ERC20 {
     function transfer(address _to, uint256 _value) external returns (bool success);
 }
@@ -43,6 +11,7 @@ contract pUniEthUsdtReimbursement {
   mapping (address => bool) public reimbursed;
 
   address public constant token = 0x09FC573c502037B149ba87782ACC81cF093EC6ef;
+  address public constant gov = 0x9d074E37d408542FD38be78848e8814AFB38db17;
 
   constructor() public {
     amounts[0x907D9B32654B8D43e8737E0291Ad9bfcce01DAD6] = 3031012566706;
@@ -250,6 +219,11 @@ contract pUniEthUsdtReimbursement {
     require(amounts[msg.sender] > 0, "not claimable");
     require(ERC20(token).transfer(msg.sender, amounts[msg.sender]));
     reimbursed[msg.sender] = true;
+  }
+
+  function saveERC20(address _erc20, uint256 _amount) public {
+    require(_erc20 != token, "!token");
+    require(ERC20(_erc20).transfer(gov, _amount));
   }
   
 }
