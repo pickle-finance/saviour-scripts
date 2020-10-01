@@ -1,7 +1,7 @@
 const fs = require("fs");
 const { ethers } = require("ethers");
 const contracts = require("./contracts");
-const erc20IFace = new ethers.utils.Interface(require("./ABIs/jar.json"));
+const erc20IFace = new ethers.utils.Interface(require("../ABIs/jar.json"));
 const provider = contracts.provider;
 
 const generateData = async ({ jar, poolID, fuckedBlock }) => {

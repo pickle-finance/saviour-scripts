@@ -3,8 +3,8 @@ const erc20 = require("@studydefi/money-legos/erc20");
 
 const provider = new ethers.providers.InfuraProvider(1);
 
-const jarABI = require("./ABIs/jar.json");
-const masterchefABI = require("./ABIs/masterchef.json");
+const jarABI = require("../ABIs/jar.json");
+const masterchefABI = require("../ABIs/masterchef.json");
 
 module.exports = {
   provider,

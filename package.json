@@ -5,7 +5,7 @@
   "author": "me@pickle-finance@gmail.com",
   "license": "MIT",
   "scripts": {
-    "start": "node script.js"
+    "start": "node scripts/snapshot.js"
   },
   "dependencies": {
     "@studydefi/money-legos": "^2.4.1",
