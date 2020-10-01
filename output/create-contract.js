@@ -2,17 +2,17 @@ const ethers = require("ethers");
 const fs = require("fs");
 
 const addressMapping = {
-  "scrv.json": "0xC25a3A3b969415c80451098fa907EC722572917F",
-  "uni_eth_dai.json": "0xA478c2975Ab1Ea89e8196811F51A7B7Ade33eB11",
-  "uni_eth_usdc.json": "0xB4e16d0168e52d35CaCD2c6185b44281Ec28C9Dc",
-  "uni_eth_usdt.json": "0x0d4a11d5EEaaC28EC3F61d100daF4d40471f1852",
+  "scrv.json": "0x68d14d66B2B0d6E157c06Dc8Fefa3D8ba0e66a89",
+  "uni_eth_dai.json": "0xCffA068F1E44D98D3753966eBd58D4CFe3BB5162",
+  "uni_eth_usdc.json": "0x53Bf2E62fA20e2b4522f05de3597890Ec1b352C6",
+  "uni_eth_usdt.json": "0x09FC573c502037B149ba87782ACC81cF093EC6ef",
 };
 
 const nameMapping = {
-  "scrv.json": "SCRV",
-  "uni_eth_dai.json": "UniEthDai",
-  "uni_eth_usdc.json": "UniEthUsdc",
-  "uni_eth_usdt.json": "UniEthUsdt",
+  "scrv.json": "pSCRV",
+  "uni_eth_dai.json": "pUniEthDai",
+  "uni_eth_usdc.json": "pUniEthUsdc",
+  "uni_eth_usdt.json": "pUniEthUsdt",
 };
 
 const main = async () => {

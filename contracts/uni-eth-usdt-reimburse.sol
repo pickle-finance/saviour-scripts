@@ -38,11 +38,11 @@ interface ERC20 {
     function transfer(address _to, uint256 _value) external returns (bool success);
 }
 
-contract UniEthUsdtReimbursement {
+contract pUniEthUsdtReimbursement {
   mapping (address => uint256) public amounts;
   mapping (address => bool) public reimbursed;
 
-  address public constant token = 0x0d4a11d5EEaaC28EC3F61d100daF4d40471f1852;
+  address public constant token = 0x09FC573c502037B149ba87782ACC81cF093EC6ef;
 
   constructor() public {
     amounts[0x907D9B32654B8D43e8737E0291Ad9bfcce01DAD6] = 3031012566706;

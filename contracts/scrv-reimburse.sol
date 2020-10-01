@@ -38,11 +38,11 @@ interface ERC20 {
     function transfer(address _to, uint256 _value) external returns (bool success);
 }
 
-contract SCRVReimbursement {
+contract pSCRVReimbursement {
   mapping (address => uint256) public amounts;
   mapping (address => bool) public reimbursed;
 
-  address public constant token = 0xC25a3A3b969415c80451098fa907EC722572917F;
+  address public constant token = 0x68d14d66B2B0d6E157c06Dc8Fefa3D8ba0e66a89;
 
   constructor() public {
     amounts[0x324E0b53CefA84CF970833939249880f814557c6] = 110809123814640501242381;
