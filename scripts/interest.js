@@ -6,16 +6,19 @@ abiDecoder.addABI(require("../ABIs/psCRVStrategy.json"));
 abiDecoder.addABI(require("../ABIs/pUNIStrategy.json"));
 
 const curveRewardsIFace = new ethers.utils.Interface(
-  require("../ABIs/CurveRewards.json"),
+  require("../ABIs/CurveRewards.json")
 );
 const uniStakingIFace = new ethers.utils.Interface(
-  require("../ABIs/UniStaking.json"),
+  require("../ABIs/UniStaking.json")
 );
 
 const provider = new ethers.providers.EtherscanProvider(1);
 
+// Assume each block is 13 seconds
+const startBlock = 10912892;
+const endBlock = 10959415;
+
 const getInterestEarned = async (strategyAddress) => {
-  const snapshotBlock = 10959415;
   const isPsCRV =
     strategyAddress === "0xE0f887aa435Bcce11bA3836FEAA82a05f860898E";
 
@@ -23,12 +26,16 @@ const getInterestEarned = async (strategyAddress) => {
   const history = (await provider.getHistory(strategyAddress)).slice(1);
   const harvestTxs = history.filter((tx) => {
     const functionSig = abiDecoder.decodeMethod(tx.data);
-    return functionSig.name === "harvest" && tx.blockNumber >= snapshotBlock;
+    return (
+      functionSig.name === "harvest" &&
+      tx.blockNumber >= startBlock &&
+      tx.blockNumber < endBlock
+    );
   });
 
   // get non-failing tx receipts
   const txReceipts = await Promise.all(
-    harvestTxs.map((tx) => provider.getTransactionReceipt(tx.hash)),
+    harvestTxs.map((tx) => provider.getTransactionReceipt(tx.hash))
   );
   const nonFailingTxs = txReceipts.filter((x) => x.status !== 0);
 
@@ -57,7 +64,10 @@ const getInterestEarned = async (strategyAddress) => {
         .map((x) => uniStakingIFace.parseLog(x))
         .filter((x) => x.name === "Staked")[0];
 
-      return acc.add(stakedLogDesc.args.amount);
+      if (stakedLogDesc) {
+        return acc.add(stakedLogDesc.args.amount);
+      }
+      return acc;
     }, ethers.BigNumber.from(0));
 
     console.log("LP Tokens Earned", ethers.utils.formatUnits(earned));
@@ -65,6 +75,8 @@ const getInterestEarned = async (strategyAddress) => {
 };
 
 const main = async () => {
+  console.log("=== Calculating interest earned ===");
+  console.log(`Start block: ${startBlock}, endBLock: ${endBlock}`);
   console.log("=== psCRV ===");
   await getInterestEarned("0xE0f887aa435Bcce11bA3836FEAA82a05f860898E"); // psCRV
   console.log("=== pUNIDAI ===");
