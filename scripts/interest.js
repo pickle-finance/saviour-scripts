@@ -15,15 +15,18 @@ const uniStakingIFace = new ethers.utils.Interface(
 const provider = new ethers.providers.EtherscanProvider(1);
 
 const getInterestEarned = async (strategyAddress) => {
-  const snapshotBlock = 10959415;
+  const fromBlock = 10960327;
+  const toBlock = 11005180;
   const isPsCRV =
     strategyAddress === "0xE0f887aa435Bcce11bA3836FEAA82a05f860898E";
 
   // get transactions
-  const history = (await provider.getHistory(strategyAddress)).slice(1);
+  const history = (
+    await provider.getHistory(strategyAddress, fromBlock, toBlock)
+  ).slice(1);
   const harvestTxs = history.filter((tx) => {
     const functionSig = abiDecoder.decodeMethod(tx.data);
-    return functionSig.name === "harvest" && tx.blockNumber >= snapshotBlock;
+    return functionSig.name === "harvest";
   });
 
   // get non-failing tx receipts
