@@ -5,7 +5,7 @@ const erc20IFace = new ethers.utils.Interface(require("../ABIs/jar.json"));
 const provider = contracts.provider;
 
 const generateData = async ({ jar, poolID, fuckedBlock }) => {
-  const snapshotBlock = 10959415;
+  const snapshotBlock = 12272232;
   let users = {};
 
   // 1. Getting all the users
@@ -125,35 +125,21 @@ const generateData = async ({ jar, poolID, fuckedBlock }) => {
 };
 
 const main = async () => {
-  const pJar0FuckedBlock = 10958758;
-  const pJar69aFuckedBlock = 10958774;
-  const pJar69bFuckedBlock = 10958783;
-  const pJar69cFuckedBlock = 10958793;
+  const bacdaiFuckedBlock = 12243879;
+  const basdaiFuckedBlock = 12248794;
 
   const monies = [
     {
-      jar: contracts.psCRV,
-      poolID: 8,
-      fuckedBlock: pJar0FuckedBlock,
-      outfile: "scrv.json",
+      jar: contracts.pBACDAI,
+      poolID: 22,
+      fuckedBlock: bacdaiFuckedBlock,
+      outfile: "bacdai.json",
     },
     {
-      jar: contracts.pUNIDAI,
-      poolID: 5,
-      fuckedBlock: pJar69aFuckedBlock,
-      outfile: "uni_eth_dai.json",
-    },
-    {
-      jar: contracts.pUNIUSDC,
-      poolID: 6,
-      fuckedBlock: pJar69bFuckedBlock,
-      outfile: "uni_eth_usdc.json",
-    },
-    {
-      jar: contracts.pUNIUSDT,
-      poolID: 7,
-      fuckedBlock: pJar69cFuckedBlock,
-      outfile: "uni_eth_usdt.json",
+      jar: contracts.pBASDAI,
+      poolID: 27,
+      fuckedBlock: basdaiFuckedBlock,
+      outfile: "basdai.json",
     },
   ];
 
