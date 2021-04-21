@@ -24,19 +24,15 @@ const generateData = async ({ jar, poolID, fuckedBlock }) => {
   // 2. Getting the total asset balance of the users at the pre-fucked block
   const ratio = await jar.getRatio({ blockTag: fuckedBlock - 1 });
   await Promise.all(
-    Object.keys(users).map(async userAddress => {
+    Object.keys(users).map(async (userAddress) => {
       // pToken balance in jar
       const balInJar = await jar.balanceOf(userAddress, {
-        blockTag: fuckedBlock - 1
+        blockTag: fuckedBlock - 1,
       });
       // pToken balance in farm
-      const { amount: balInFarm } = await contracts.masterchef.userInfo(
-        poolID,
-        userAddress,
-        { blockTag: fuckedBlock - 1 }
-      );
-
-      if(userAddress === "0xdbeDB1B7d359b0776E139D385c78a5ac9B27C0f9") console.log(balInJar.toString(), balInFarm.toString())
+      const { amount: balInFarm } = await contracts.masterchef.userInfo(poolID, userAddress, {
+        blockTag: fuckedBlock - 1,
+      });
 
       // store total asset balance of the users (at pre-fucked state)
       users[userAddress] = balInJar
@@ -49,67 +45,52 @@ const generateData = async ({ jar, poolID, fuckedBlock }) => {
   // Post fuck block
   // 3. Do a state transition to see how much users have withdrawn and deposited into the fund
   const depositEventsPostFuck = events
-    .filter(x => x.blockNumber >= fuckedBlock && x.blockNumber < snapshotBlock)
-    .filter(x => x.args.from === ethers.constants.AddressZero);
+    .filter((x) => x.blockNumber >= fuckedBlock && x.blockNumber < snapshotBlock)
+    .filter((x) => x.args.from === ethers.constants.AddressZero);
   await Promise.all(
-    depositEventsPostFuck.map(async evt => {
-      const txReceipt = await provider.getTransactionReceipt(
-        evt.transactionHash
-      );
-
-      txReceipt.logs = txReceipt.logs.filter(
-        x =>
-          !x.topics.includes(
-            "0x90890809c654f11d6e72a28fa60149770a0d11ec6c92319d6ceb2bb0a4ea1a15"
-          )
-      ).map(x => erc20IFace.parseLog(x));
-      txReceipt.logs.forEach(x => {
+    depositEventsPostFuck.map(async (evt) => {
+      const txReceipt = await provider.getTransactionReceipt(evt.transactionHash);
+      txReceipt.logs = txReceipt.logs.map((x) => {
+        return erc20IFace.parseLog(x);
+      });
+      txReceipt.logs.forEach((x) => {
         // for each transfer, see how much non-pToken is deposited into the jar
         if (x.args.to === jar.address) {
           // whatever ppl put into the jar, add that to the balance
-          users[x.args.from] = (
-            users[x.args.from] || ethers.BigNumber.from(0)
-          ).add(x.args.value);
+          users[x.args.from] = (users[x.args.from] || ethers.BigNumber.from(0)).add(x.args.value);
         }
       });
     })
   );
 
   const withdrawEventsPostFuck = events
-    .filter(x => x.blockNumber >= fuckedBlock)
-    .filter(x => x.args.to === ethers.constants.AddressZero);
+    .filter((x) => x.blockNumber >= fuckedBlock)
+    .filter((x) => x.args.to === ethers.constants.AddressZero);
   await Promise.all(
-    withdrawEventsPostFuck.map(async evt => {
-      const txReceipt = await provider.getTransactionReceipt(
-        evt.transactionHash
-      );
+    withdrawEventsPostFuck.map(async (evt) => {
+      const txReceipt = await provider.getTransactionReceipt(evt.transactionHash);
 
       txReceipt.logs = txReceipt.logs
-        .map(x => {
+        .map((x) => {
           try {
             return erc20IFace.parseLog(x);
           } catch (e) {
             return null;
           }
         })
-        .filter(x => x !== null);
+        .filter((x) => x !== null);
 
-      txReceipt.logs.forEach(x => {
+      txReceipt.logs.forEach((x) => {
         // for each transfer, see how much non-pToken was sent out from the jar
-        if (
-          x.args.from === jar.address &&
-          x.args.to !== ethers.constants.AddressZero
-        ) {
-          users[x.args.to] = (users[x.args.to] || ethers.BigNumber.from(0)).sub(
-            x.args.value
-          );
+        if (x.args.from === jar.address && x.args.to !== ethers.constants.AddressZero) {
+          users[x.args.to] = (users[x.args.to] || ethers.BigNumber.from(0)).sub(x.args.value);
         }
       });
     })
   );
 
   // Readable format
-  Object.keys(users).forEach(userAddress => {
+  Object.keys(users).forEach((userAddress) => {
     const temp = users[userAddress];
 
     // No need to airdrop 0 tokens
@@ -121,7 +102,7 @@ const generateData = async ({ jar, poolID, fuckedBlock }) => {
     else {
       users[userAddress] = {
         rawValue: temp.toString(),
-        value: ethers.utils.formatEther(temp)
+        value: ethers.utils.formatEther(temp),
       };
     }
   });
@@ -129,22 +110,22 @@ const generateData = async ({ jar, poolID, fuckedBlock }) => {
 };
 
 const main = async () => {
-  const bacdaiFuckedBlock = 12243879;
-  const basdaiFuckedBlock = 12248794;
+  const bacdaiFuckedBlock = 12243088;
+  const basdaiFuckedBlock = 12243432;
 
   const monies = [
     {
       jar: contracts.pBACDAI,
       poolID: 22,
       fuckedBlock: bacdaiFuckedBlock,
-      outfile: "bacdai.json"
+      outfile: "bacdai.json",
     },
     {
       jar: contracts.pBASDAI,
       poolID: 27,
       fuckedBlock: basdaiFuckedBlock,
-      outfile: "basdai.json"
-    }
+      outfile: "basdai.json",
+    },
   ];
 
   for (const moneh of monies) {

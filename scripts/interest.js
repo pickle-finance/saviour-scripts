@@ -5,19 +5,14 @@ const contracts = require("./contracts");
 abiDecoder.addABI(require("../ABIs/psCRVStrategy.json"));
 abiDecoder.addABI(require("../ABIs/pUNIStrategy.json"));
 
-const curveRewardsIFace = new ethers.utils.Interface(
-  require("../ABIs/CurveRewards.json"),
-);
-const uniStakingIFace = new ethers.utils.Interface(
-  require("../ABIs/UniStaking.json"),
-);
+const curveRewardsIFace = new ethers.utils.Interface(require("../ABIs/CurveRewards.json"));
+const uniStakingIFace = new ethers.utils.Interface(require("../ABIs/UniStaking.json"));
 
 const provider = new ethers.providers.EtherscanProvider(1);
 
 const getInterestEarned = async (strategyAddress) => {
   const snapshotBlock = 10959415;
-  const isPsCRV =
-    strategyAddress === "0xE0f887aa435Bcce11bA3836FEAA82a05f860898E";
+  const isPsCRV = strategyAddress === "0xE0f887aa435Bcce11bA3836FEAA82a05f860898E";
 
   // get transactions
   const history = (await provider.getHistory(strategyAddress)).slice(1);
@@ -27,9 +22,7 @@ const getInterestEarned = async (strategyAddress) => {
   });
 
   // get non-failing tx receipts
-  const txReceipts = await Promise.all(
-    harvestTxs.map((tx) => provider.getTransactionReceipt(tx.hash)),
-  );
+  const txReceipts = await Promise.all(harvestTxs.map((tx) => provider.getTransactionReceipt(tx.hash)));
   const nonFailingTxs = txReceipts.filter((x) => x.status !== 0);
 
   if (isPsCRV) {
