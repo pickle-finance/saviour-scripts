@@ -15,12 +15,12 @@ module.exports = {
     provider
   ),
   pBACDAI: new ethers.Contract(
-    "0x4Cac56929B98d4C52dDfDF998329622013Fed2a5",
+    "0x2350fc7268F3f5a6cC31f26c38f706E41547505d",
     jarABI,
     provider
   ),
   pBASDAI: new ethers.Contract(
-    "0xcF45563514a24b10563aC0c9fECCd3476b00DF45",
+    "0x748712686a78737da0b7643df78fdf2778dc5944",
     jarABI,
     provider
   ),
