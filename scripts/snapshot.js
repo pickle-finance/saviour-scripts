@@ -5,7 +5,7 @@ const erc20IFace = new ethers.utils.Interface(require("../ABIs/jar.json"));
 const provider = contracts.provider;
 
 const generateData = async ({ jar, poolID, fuckedBlock }) => {
-  const snapshotBlock = 10959415;
+  const snapshotBlock = 12272232;
   let users = {};
 
   // 1. Getting all the users
@@ -30,11 +30,9 @@ const generateData = async ({ jar, poolID, fuckedBlock }) => {
         blockTag: fuckedBlock - 1,
       });
       // pToken balance in farm
-      const { amount: balInFarm } = await contracts.masterchef.userInfo(
-        poolID,
-        userAddress,
-        { blockTag: fuckedBlock - 1 }
-      );
+      const { amount: balInFarm } = await contracts.masterchef.userInfo(poolID, userAddress, {
+        blockTag: fuckedBlock - 1,
+      });
 
       // store total asset balance of the users (at pre-fucked state)
       users[userAddress] = balInJar
@@ -47,25 +45,19 @@ const generateData = async ({ jar, poolID, fuckedBlock }) => {
   // Post fuck block
   // 3. Do a state transition to see how much users have withdrawn and deposited into the fund
   const depositEventsPostFuck = events
-    .filter(
-      (x) => x.blockNumber >= fuckedBlock && x.blockNumber < snapshotBlock
-    )
+    .filter((x) => x.blockNumber >= fuckedBlock && x.blockNumber < snapshotBlock)
     .filter((x) => x.args.from === ethers.constants.AddressZero);
   await Promise.all(
     depositEventsPostFuck.map(async (evt) => {
-      const txReceipt = await provider.getTransactionReceipt(
-        evt.transactionHash
-      );
-
-      txReceipt.logs = txReceipt.logs.map((x) => erc20IFace.parseLog(x));
-
+      const txReceipt = await provider.getTransactionReceipt(evt.transactionHash);
+      txReceipt.logs = txReceipt.logs.map((x) => {
+        return erc20IFace.parseLog(x);
+      });
       txReceipt.logs.forEach((x) => {
         // for each transfer, see how much non-pToken is deposited into the jar
         if (x.args.to === jar.address) {
           // whatever ppl put into the jar, add that to the balance
-          users[x.args.from] = (
-            users[x.args.from] || ethers.BigNumber.from(0)
-          ).add(x.args.value);
+          users[x.args.from] = (users[x.args.from] || ethers.BigNumber.from(0)).add(x.args.value);
         }
       });
     })
@@ -76,9 +68,7 @@ const generateData = async ({ jar, poolID, fuckedBlock }) => {
     .filter((x) => x.args.to === ethers.constants.AddressZero);
   await Promise.all(
     withdrawEventsPostFuck.map(async (evt) => {
-      const txReceipt = await provider.getTransactionReceipt(
-        evt.transactionHash
-      );
+      const txReceipt = await provider.getTransactionReceipt(evt.transactionHash);
 
       txReceipt.logs = txReceipt.logs
         .map((x) => {
@@ -92,13 +82,8 @@ const generateData = async ({ jar, poolID, fuckedBlock }) => {
 
       txReceipt.logs.forEach((x) => {
         // for each transfer, see how much non-pToken was sent out from the jar
-        if (
-          x.args.from === jar.address &&
-          x.args.to !== ethers.constants.AddressZero
-        ) {
-          users[x.args.to] = (users[x.args.to] || ethers.BigNumber.from(0)).sub(
-            x.args.value
-          );
+        if (x.args.from === jar.address && x.args.to !== ethers.constants.AddressZero) {
+          users[x.args.to] = (users[x.args.to] || ethers.BigNumber.from(0)).sub(x.args.value);
         }
       });
     })
@@ -125,35 +110,21 @@ const generateData = async ({ jar, poolID, fuckedBlock }) => {
 };
 
 const main = async () => {
-  const pJar0FuckedBlock = 10958758;
-  const pJar69aFuckedBlock = 10958774;
-  const pJar69bFuckedBlock = 10958783;
-  const pJar69cFuckedBlock = 10958793;
+  const bacdaiFuckedBlock = 12243088;
+  const basdaiFuckedBlock = 12243432;
 
   const monies = [
     {
-      jar: contracts.psCRV,
-      poolID: 8,
-      fuckedBlock: pJar0FuckedBlock,
-      outfile: "scrv.json",
+      jar: contracts.pBACDAI,
+      poolID: 22,
+      fuckedBlock: bacdaiFuckedBlock,
+      outfile: "bacdai.json",
     },
     {
-      jar: contracts.pUNIDAI,
-      poolID: 5,
-      fuckedBlock: pJar69aFuckedBlock,
-      outfile: "uni_eth_dai.json",
-    },
-    {
-      jar: contracts.pUNIUSDC,
-      poolID: 6,
-      fuckedBlock: pJar69bFuckedBlock,
-      outfile: "uni_eth_usdc.json",
-    },
-    {
-      jar: contracts.pUNIUSDT,
-      poolID: 7,
-      fuckedBlock: pJar69cFuckedBlock,
-      outfile: "uni_eth_usdt.json",
+      jar: contracts.pBASDAI,
+      poolID: 27,
+      fuckedBlock: basdaiFuckedBlock,
+      outfile: "basdai.json",
     },
   ];
 
