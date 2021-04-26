@@ -2,17 +2,13 @@ const ethers = require("ethers");
 const fs = require("fs");
 
 const addressMapping = {
-  "scrv.json": "0x68d14d66B2B0d6E157c06Dc8Fefa3D8ba0e66a89",
-  "uni_eth_dai.json": "0xCffA068F1E44D98D3753966eBd58D4CFe3BB5162",
-  "uni_eth_usdc.json": "0x53Bf2E62fA20e2b4522f05de3597890Ec1b352C6",
-  "uni_eth_usdt.json": "0x09FC573c502037B149ba87782ACC81cF093EC6ef",
+  "bacdai.json": "0x4Cac56929B98d4C52dDfDF998329622013Fed2a5",
+  "basdai.json": "0xcF45563514a24b10563aC0c9fECCd3476b00DF45",
 };
 
 const nameMapping = {
-  "scrv.json": "pSCRV",
-  "uni_eth_dai.json": "pUniEthDai",
-  "uni_eth_usdc.json": "pUniEthUsdc",
-  "uni_eth_usdt.json": "pUniEthUsdt",
+  "bacdai.json": "pBasisBacDai",
+  "basdai.json": "pBasisBasDai",
 };
 
 const main = async () => {
@@ -20,15 +16,15 @@ const main = async () => {
   const data = JSON.parse(fs.readFileSync(file, "utf-8"));
   const recipients = Object.keys(data);
 
-  const filename = file.split('/').slice(-1)[0]
-  const tokenAddress = addressMapping[filename]
-  const tokenName = nameMapping[filename]
+  const filename = file.split("/").slice(-1)[0];
+  const tokenAddress = addressMapping[filename];
+  const tokenName = nameMapping[filename];
 
   if (!tokenAddress || !tokenName) {
-    console.log('NOONONONONONONONONONO')
-    process.exit(1)
+    console.log("NOONONONONONONONONONO");
+    process.exit(1);
   }
-  
+
   console.log(`// SPDX-License-Identifier: MIT
 // from file ${file}
 pragma solidity ^0.6.7;
@@ -46,9 +42,7 @@ contract ${tokenName}Reimbursement {
 
   constructor() public {`);
   for (const r of recipients) {
-    console.log(
-      `    amounts[${ethers.utils.getAddress(r)}] = ${data[r].rawValue};`
-    );
+    console.log(`    amounts[${ethers.utils.getAddress(r)}] = ${data[r].rawValue};`);
   }
   console.log(`
   }
@@ -61,7 +55,7 @@ contract ${tokenName}Reimbursement {
   }
 
   function saveERC20(address _erc20, uint256 _amount) public {
-    require(_erc20 != token, "!token");
+    require(msg.sender == gov, "!gov");
     require(ERC20(_erc20).transfer(gov, _amount));
   }
   `);
