@@ -5,25 +5,31 @@ const erc20IFace = new ethers.utils.Interface(require("../ABIs/jar.json"));
 const gaugeABI = require("../ABIs/gauge.json");
 const provider = contracts.provider;
 
-let users = {};
-const generateData = async (jar, poolID, lunaRewards, blockNum) => {
-  // 1. Getting all the users
+const initializeUsers = async jar => {
+  let users = {};
   const filter = jar.filters.Transfer();
-  const events = await jar.queryFilter(filter);
   const gaugeAddress = await contracts.gaugeProxy.getGauge(jar.address);
-  const gaugeContract = new ethers.Contract(gaugeAddress, gaugeABI, provider);
-
+  const events = await jar.queryFilter(filter);
   for (const e of events) {
-    if (!users[e.args.from] && !users[e.args.to]) {
-      users[e.args.from] = {bal: ethers.constants.Zero, luna: 0};
-      users[e.args.to] = {bal: ethers.constants.Zero, luna: 0};
-    }
+    users[e.args.from] = { bal: ethers.constants.Zero, luna: 0 };
+    users[e.args.to] = { bal: ethers.constants.Zero, luna: 0 };
   }
+
   // Delete burn address, dead address and masterchef
   delete users[ethers.constants.AddressZero];
   delete users[contracts.masterchef.address];
   delete users[gaugeAddress];
   delete users["0x000000000000000000000000000000000000dEaD"];
+
+  return users;
+};
+
+const generateData = async (jar, poolID, lunaRewards, blockNum, users) => {
+  // 1. Getting all the users
+  const filter = jar.filters.Transfer();
+  const events = await jar.queryFilter(filter);
+  const gaugeAddress = await contracts.gaugeProxy.getGauge(jar.address);
+  const gaugeContract = new ethers.Contract(gaugeAddress, gaugeABI, provider);
 
   // 2. Getting the total asset balance of the users at the pre-fucked block
   const ratio = await jar.getRatio({ blockTag: blockNum - 1 });
@@ -67,30 +73,19 @@ const generateData = async (jar, poolID, lunaRewards, blockNum) => {
   Object.keys(users).forEach(userAddress => {
     const temp = users[userAddress];
 
-    // No need to airdrop 0 tokens
-    if (temp.bal.lte(ethers.constants.Zero)) {
-      delete users[userAddress];
-    }
-
     // Airdrop tokens
-    else {
-      if(userAddress === "0xbd1293983CBDc189f986bAfDA8cbf9f37fb30E2C")
-      console.log(temp.luna, lunaRewards *
+    const userLuna =
+      temp.luna +
+      lunaRewards *
         +ethers.utils.formatEther(
           temp.bal.mul(ethers.utils.parseEther("1")).div(totalDeposits)
-        ))
-      const userLuna = temp.luna +
-          lunaRewards *
-            +ethers.utils.formatEther(
-              temp.bal.mul(ethers.utils.parseEther("1")).div(totalDeposits)
-            );
+        );
 
-      users[userAddress] = {
-        rawValue: temp.bal.toString(),
-        value: ethers.utils.formatEther(temp.bal),
-        luna: userLuna
-      };
-    }
+    users[userAddress] = {
+      rawValue: temp.bal.toString(),
+      value: ethers.utils.formatEther(temp.bal),
+      luna: userLuna
+    };
   });
   return users;
 };
@@ -141,15 +136,23 @@ const main = async () => {
   for (const moneh of monies) {
     const blockIncrement = Math.floor((endBlock - startBlock) / 14); // Space out snapshots daily over 2 weeks
 
+    let data;
+    let users = await initializeUsers(moneh.jar);
     for (i = 0; i < 14; i++) {
-      const data = await generateData(
+      data = await generateData(
         moneh.jar,
         moneh.poolID,
         moneh.luna / 14,
-        startBlock + blockIncrement * i
+        startBlock + blockIncrement * i,
+        users
       );
-      fs.writeFileSync(moneh.outfile, JSON.stringify(data, null, 4));
     }
+
+    // Cleanup
+    for (const user in users) {
+      if (data[user].luna === 0) delete data[user];
+    }
+    fs.writeFileSync(moneh.outfile, JSON.stringify(data, null, 4));
   }
 };
 
