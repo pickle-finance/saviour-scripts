@@ -1,16 +1,19 @@
 const fs = require("fs");
 const { ethers } = require("ethers");
 const contracts = require("./contracts");
+const { masterchef } = require("./contracts");
 const erc20IFace = new ethers.utils.Interface(require("../ABIs/jar.json"));
 const provider = contracts.provider;
+const abiDecoder = require("abi-decoder");
+abiDecoder.addABI(require("../ABIs/jar.json"));
 
 const generateData = async ({ jar, poolID, fuckedBlock }) => {
-  const snapshotBlock = 12272232;
   let users = {};
 
   // 1. Getting all the users
   const filter = jar.filters.Transfer();
-  const events = await jar.queryFilter(filter);
+  const events = await jar.queryFilter(filter, fuckedBlock );
+  console.log(events[0])
   for (const e of events) {
     users[e.args.from] = ethers.constants.Zero;
     users[e.args.to] = ethers.constants.Zero;
@@ -21,43 +24,27 @@ const generateData = async ({ jar, poolID, fuckedBlock }) => {
   delete users[contracts.masterchef.address];
   delete users["0x000000000000000000000000000000000000dEaD"];
 
-  // 2. Getting the total asset balance of the users at the pre-fucked block
-  const ratio = await jar.getRatio({ blockTag: fuckedBlock - 1 });
-  await Promise.all(
-    Object.keys(users).map(async (userAddress) => {
-      // pToken balance in jar
-      const balInJar = await jar.balanceOf(userAddress, {
-        blockTag: fuckedBlock - 1,
-      });
-      // pToken balance in farm
-      const { amount: balInFarm } = await contracts.masterchef.userInfo(poolID, userAddress, {
-        blockTag: fuckedBlock - 1,
-      });
-
-      // store total asset balance of the users (at pre-fucked state)
-      users[userAddress] = balInJar
-        .add(balInFarm)
-        .mul(ratio) // convert from pToken to token
-        .div(ethers.utils.parseEther("1"));
-    })
-  );
-
   // Post fuck block
   // 3. Do a state transition to see how much users have withdrawn and deposited into the fund
   const depositEventsPostFuck = events
-    .filter((x) => x.blockNumber >= fuckedBlock && x.blockNumber < snapshotBlock)
+    .filter(
+      (x) => x.blockNumber >= fuckedBlock)
     .filter((x) => x.args.from === ethers.constants.AddressZero);
   await Promise.all(
     depositEventsPostFuck.map(async (evt) => {
-      const txReceipt = await provider.getTransactionReceipt(evt.transactionHash);
-      txReceipt.logs = txReceipt.logs.map((x) => {
-        return erc20IFace.parseLog(x);
-      });
+      const txReceipt = await provider.getTransactionReceipt(
+        evt.transactionHash
+      );
+
+      txReceipt.logs = txReceipt.logs.map((x) => erc20IFace.parseLog(x));
+
       txReceipt.logs.forEach((x) => {
         // for each transfer, see how much non-pToken is deposited into the jar
         if (x.args.to === jar.address) {
           // whatever ppl put into the jar, add that to the balance
-          users[x.args.from] = (users[x.args.from] || ethers.BigNumber.from(0)).add(x.args.value);
+          users[x.args.from] = (
+            users[x.args.from] || ethers.BigNumber.from(0)
+          ).add(x.args.value);
         }
       });
     })
@@ -68,7 +55,9 @@ const generateData = async ({ jar, poolID, fuckedBlock }) => {
     .filter((x) => x.args.to === ethers.constants.AddressZero);
   await Promise.all(
     withdrawEventsPostFuck.map(async (evt) => {
-      const txReceipt = await provider.getTransactionReceipt(evt.transactionHash);
+      const txReceipt = await provider.getTransactionReceipt(
+        evt.transactionHash
+      );
 
       txReceipt.logs = txReceipt.logs
         .map((x) => {
@@ -82,8 +71,14 @@ const generateData = async ({ jar, poolID, fuckedBlock }) => {
 
       txReceipt.logs.forEach((x) => {
         // for each transfer, see how much non-pToken was sent out from the jar
-        if (x.args.from === jar.address && x.args.to !== ethers.constants.AddressZero) {
-          users[x.args.to] = (users[x.args.to] || ethers.BigNumber.from(0)).sub(x.args.value);
+        if (
+          x.args.from === jar.address &&
+          x.args.to !== ethers.constants.AddressZero &&
+          x.args.to !== masterchef.address
+        ) {
+          users[x.args.to] = (users[x.args.to] || ethers.BigNumber.from(0)).sub(
+            x.args.value
+          );
         }
       });
     })
@@ -110,21 +105,13 @@ const generateData = async ({ jar, poolID, fuckedBlock }) => {
 };
 
 const main = async () => {
-  const bacdaiFuckedBlock = 12243088;
-  const basdaiFuckedBlock = 12243432;
 
   const monies = [
     {
-      jar: contracts.pBACDAI,
-      poolID: 22,
-      fuckedBlock: bacdaiFuckedBlock,
-      outfile: "bacdai.json",
-    },
-    {
-      jar: contracts.pBASDAI,
-      poolID: 27,
-      fuckedBlock: basdaiFuckedBlock,
-      outfile: "basdai.json",
+      jar: contracts.pMAIUSDC,
+      poolID: 7,
+      fuckedBlock: 15597905,
+      outfile: "mai.json",
     },
   ];
 
