@@ -1,6 +1,7 @@
 const { ethers, BigNumber } = require("ethers");
 const gaugeAbi = require("../ABIs/Gauge.json");
 const erc20 = require("@studydefi/money-legos/erc20");
+const jarAbi = require("../ABIs/jar.json")
 const gaugeProxyAbi = require("../ABIs/GaugeProxy.json");
 
 const provider = new ethers.providers.JsonRpcProvider(
@@ -18,8 +19,10 @@ const main = async () => {
   // token is typically a pToken
   gaugeTokens.forEach(async (token) => {
     // get deposit token info
-    const tokenContract = new ethers.Contract(token, erc20.abi, provider);
+    const tokenContract = new ethers.Contract(token, jarAbi, provider);
     const tokenName = await tokenContract.name();
+
+    const lpAddress = await tokenContract.token().catch(x => ethers.constants.AddressZero)
 
     // get gauge
     const gaugeAddress = await gaugeProxy.gauges(token);
@@ -41,7 +44,7 @@ const main = async () => {
     });
 
     console.log(
-      `${tokenName} (${token}) has ${
+      `${tokenName} (${lpAddress == (ethers.constants.AddressZero) ? token : lpAddress}) has ${
         Object.keys(users).length
       } active Gauge depositors`
     );
